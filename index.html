@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre DI LORENZO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <img class="logo" src="Logo_PNG.png" alt="Logo">
+    <nav>
+        <div class="button-container">
+            <button onclick="displayContent('whoIAm')">Who I am</button>
+            <button onclick="displayContent('myProject')">My Project</button>
+            <button onclick="displayContent('talkWithMe')">Talk With Me</button>
+        </div>
+    </nav>
+</header>
+
+<div class="content" id="whoIAm">
+    <img src="Logo_PNG.png" alt="Alexandre DI LORENZO">
+    <h1>My Name is Alexandre DI LORENZO and welcome to my website</h1>
+    <img src="Alexcrop.jpg" alt="Alexandre DI LORENZO" class="profile-image">
+    <p class="about-me">
+        I am an engineering student specializing in computer vision, machine learning, and AI...
+    </p>
+    <img src="Paysage.jpg" alt="Alexandre DI LORENZO" class="profile-image">
+    <p class="about-me">
+        This is my website, here you can find almost everything about me, click on the icons below to access my social networks!
+    </p>
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/alex.dlrz/" target="_blank">
+            <img src="instagram-logo.webp" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://www.linkedin.com/in/alexandredilorenzo/" target="_blank">
+            <img src="linkedin-logo.png" alt="LinkedIn" class="social-icon">
+        </a>
+    </div>
+</div>
+
+<div class="my-project-content" id="myProject" style="display: none;">
+    <h2>Rate These Movies</h2>
+    <div class="movie-container">
+ <!-- Movie 1 -->
+ <div class="movie">
+    <img src="movie1.jpg" alt="Movie 1" style="width:200px; height:200px;">
+    <div class="rating" data-movie="1">
+        <!-- 5 Stars -->
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div>
+<div class="movie">
+    <img src="movie2.jpg" alt="Movie 2" style="width:200px; height:200px;">
+    <div class="rating" data-movie="2">
+        <!-- 5 Stars -->
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div>
+<div class="movie">
+    <img src="movie3.jpg" alt="Movie 3" style="width:200px; height:200px;">
+    <div class="rating" data-movie="3">
+        <!-- 5 Stars -->
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div>
+<div class="movie">
+    <img src="movie4.jpg" alt="Movie 4" style="width:200px; height:200px;">
+    <div class="rating" data-movie="4">
+        <!-- 5 Stars -->
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div>
+<div class="movie">
+    <img src="movie5.jpg" alt="Movie 5" style="width:200px; height:200px;">
+    <div class="rating" data-movie="5">
+        <!-- 5 Stars -->
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div> 
+    </div>
+    <button id="submitRatings">Submit Ratings</button>
+    <!-- Add this in your HTML where you want to display the recommendations -->
+<div id="recommendationSection">
+    <h2>Recommended Movies</h2>
+    <ul id="recommendationList"></ul>
+</div>
+
+</div>
+
+<div class="chat-content" id="talkWithMe" style="display: none;">
+    <div class="chat-messages"></div>
+    <div class="chat-input-bar">
+        <input type="text" id="chatInput" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Include the PDF.js library from a different CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script>
+    // Set the path to the PDF.js worker
+    if (window.pdfjsLib) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+    } else {
+        console.error('pdfjsLib not loaded');
+    }
+</script>
+
+<!-- Your custom script -->
+<script src="script.js"></script>
+
+</body>
+</html>
