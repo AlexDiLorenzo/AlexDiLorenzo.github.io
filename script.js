@@ -3,7 +3,7 @@ let pdfData = {};
 
 window.addEventListener('DOMContentLoaded', (event) => {
     const whoIAmButton = document.getElementById('whoIAm');
-    const myProjectButton = document.getElementById('myProject');
+    
     chatMessages = document.querySelector('.chat-messages');
 
     if (whoIAmButton) {
@@ -13,12 +13,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    if (myProjectButton) {
-        myProjectButton.addEventListener('click', function() {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = '<p>Content for the "My Project" page</p>';
-        });
-    }
+
     displayInitialMessage(); 
 });
 
