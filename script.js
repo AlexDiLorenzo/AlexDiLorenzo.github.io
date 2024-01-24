@@ -23,21 +23,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function displayInitialMessage() {
-  const initialMessage = "Here, you can ask me anything you want, an AI will answer for me, but don't worry, she knows everything about me ahah. You are limited to 3 questions of maximum 100 characters.";
-  const messageDiv = document.createElement('div');
-  messageDiv.classList.add('bot-message'); // Assuming 'bot-message' is the class for chat bot messages
-  messageDiv.textContent = initialMessage;
-  chatMessages.appendChild(messageDiv);
+    const initialMessage = "Here, you can ask me anything you want, an AI will answer for me, but don't worry, she knows everything about me ahah. You are limited to 3 questions of maximum 100 characters.";
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('bot-message');
+    messageDiv.textContent = initialMessage;
+    chatMessages.appendChild(messageDiv);
 }
 
-let questionCount = 0; // Initialize a counter for questions
+let questionCount = 0;
 
 function sendMessage() {
     const chatInput = document.getElementById('chatInput');
-    const maxQuestionLength = 100; // Maximum length for a question
-    const maxQuestionsAllowed = 3; // Maximum number of questions allowed
+    const maxQuestionLength = 100;
+    const maxQuestionsAllowed = 3;
 
-    // Check if question count is less than the maximum allowed
     if (questionCount < maxQuestionsAllowed) {
         if (chatInput.value.trim() !== '' && chatInput.value.length <= maxQuestionLength) {
             const messageDiv = document.createElement('div');
@@ -49,7 +48,7 @@ function sendMessage() {
 
             chatInput.value = '';
             chatMessages.scrollTop = chatMessages.scrollHeight;
-            questionCount++; // Increment the question count
+            questionCount++;
         } else if (chatInput.value.length > maxQuestionLength) {
             alert("Question too long. Please limit to 100 characters.");
         }
@@ -61,17 +60,15 @@ function sendMessage() {
 function displayContent(sectionId) {
     const mainContent = document.querySelector('.content');
     const chatContent = document.querySelector('.chat-content');
-    
 
     mainContent.style.display = 'none';
     chatContent.style.display = 'none';
-    
 
     if (sectionId === 'whoIAm') {
         mainContent.style.display = 'block';
     } else if (sectionId === 'talkWithMe') {
         chatContent.style.display = 'block';
-    } 
+    }
 }
 
 
