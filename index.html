@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alexandre DI LORENZO</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3mg8dcm/xA1zoj6H7jubUFE/9hlLMbhFP0CD1q0uAfDZcOVa5DZ935BaJ8x" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
     </head>
     
@@ -14,8 +14,8 @@
     <img class="logo" src="Logo_PNG.png" alt="Logo">
     <nav>
         <div class="button-container">
-            <button onclick="displayContent('whoIAm')" class="btn btn-primary">Who I am</button>
-            <button onclick="displayContent('talkWithMe')" class="btn btn-primary">Talk With Me</button>
+            <button onclick="displayContent('whoIAm')" class="btn btn-outline-light">Who I am</button>
+            <button onclick="displayContent('talkWithMe')" class="btn btn-outline-light">Talk With Me</button>
         </div>
     </nav>
 </header>
@@ -27,7 +27,7 @@
     <p class="about-me">
         I am an engineering student specializing in computer vision, machine learning, and AI...
     </p>
-    <img src="Paysage.jpg" alt="Alexandre DI LORENZO" class="profile-image">
+    
     <p class="about-me">
         This is my website, here you can find almost everything about me, click on the icons below to access my social networks!
     </p>
@@ -46,11 +46,12 @@
 
 <div class="chat-content" id="talkWithMe" style="display: none;">
     <div class="chat-messages"></div>
-    <div class="chat-input-bar">
-        <input type="text" id="chatInput" placeholder="Type your message here...">
-        <button onclick="sendMessage()">Send</button>
+    <div class="input-group my-3">
+        <input type="text" id="chatInput" class="form-control" placeholder="Type your message here..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="sendMessage()">Send</button>
     </div>
 </div>
+
 
 <!-- Include the PDF.js library from a different CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
@@ -65,6 +66,7 @@
 
 <!-- Your custom script -->
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 </html>
