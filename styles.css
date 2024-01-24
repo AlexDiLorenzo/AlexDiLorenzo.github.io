@@ -9,10 +9,8 @@ header {
     width: 100%;
     background-color: #1a1a1a;
     z-index: 9999;
-    
     box-sizing: border-box;
 }
-
 
 .button-container {
     display: flex;
@@ -20,33 +18,32 @@ header {
     gap: 20px;
     justify-content: center; 
 }
+
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: calc(100% - 80px); /* Prendre en compte la hauteur de la barre de navigation */
+    height: calc(100% - 80px); /* Account for navigation bar height */
+    margin-top: 80px; /* Push content down to avoid being covered by the fixed header */
+    padding-top: 20px; /* Additional space above the content */
 }
 
-
-.content img {
-    max-width: 100%; /* Assurez-vous qu'il ne dépasse pas la largeur du conteneur */
+.content img, .profile-image {
+    max-width: 100%;
     height: auto;
+    margin-top: 20px;
 }
-
-
-
 
 .logo {
-    width: 200px; /* Taille du logo */
-    height: 100px; /* Taille du logo */
+    width: 200px;
+    height: 100px;
 }
 
 nav {
-    font-size: 24px; /* Ajuster selon la taille souhaitée */
+    font-size: 24px;
 }
-
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -56,93 +53,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;  /* Ajouté pour le box-sizing */
+    box-sizing: border-box;
     overflow-x: hidden;
-    height: 100vh;  /* ajouté pour assurer une hauteur minimale à la page */
-}
-
-
-
-
-nav button {
-    background: none;
-    border: none;
-    font-weight: bold;
-    font-family: 'Montserrat',sans-serif;
-    color: #FFF;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-left: 20px; /* Espacement entre les boutons */
-    padding: 10px 20px; /* Espacement autour des boutons pour un meilleur effet de survol */
-    position: relative; /* Préparez pour l'effet de survol */
-}
-
-nav button:first-child {
-    margin-left: 0; /* Supprime l'espacement du premier bouton pour le centrage */
-}
-
-nav button:hover {
-    color: #1a1a1a; /* Changement de couleur du texte au survol */
-    background-color: #FFF; /* Changement de couleur de fond au survol */
-    border-radius: 5px; /* Coins arrondis */
-}
-
-nav button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #FFF;
-    transition: 0.3s;
-}
-
-nav button:hover::before {
-    width: 100%; /* Ligne horizontale complète au survol */
-}
-
-nav button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background-color: #FFF;
-    transition: 0.3s;
-}
-
-nav button:hover::after {
-    width: 100%; /* Ligne horizontale complète au survol */
-}
-
-
-
-main img {
-    max-width: 80%;
-    height: auto;
-    margin-top: 2rem;
-}
-
-h1 {
-    margin: 2rem 0;
+    height: 100vh;
 }
 
 .chat-content {
-    position: fixed;  /* Changez à 'fixed' pour s'assurer que cela reste en bas */
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;  /* Ajouter un peu d'espace autour */
-    box-sizing: border-box;  /* S'assurer que le padding est inclus dans la largeur/hauteur */
+    padding: 10px;
+    box-sizing: border-box;
 }
-
 
 .chat-messages {
     height: calc(100% - 50px); 
     overflow: auto;
 }
+
 .chat-input-bar {
     display: flex;
     width: 90%;
@@ -181,53 +110,13 @@ h1 {
     align-self: flex-start;
 }
 
-
-/* Style for the profile image */
-.profile-image {
-    width: 500px; /* Set the width to 500px */
-    height: 500px; /* Set the height to 500px */
-    object-fit: cover; /* This will ensure the image doesn't get distorted */
-    margin-top: 20px; /* Optional: Adds some space above the image */
-}
-
-/* Style for the additional paragraph */
-.about-me {
-    font-size: 2em; /* Slightly smaller than the h1 font size */
-    margin-top: 50px; /* Optional: Adds some space above the paragraph */
-    margin-bottom: 20px; /* Optional: Adds some space below the paragraph */
-}
 .social-icon {
-    width: 100px; /* Set the width to 100px */
-    height: 100px; /* Set the height to 100px */
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge the icon on hover for a nice effect */
-}
-
-.movie-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.movie {
-    text-align: center;
-}
-
-.star {
-    cursor: pointer;
-    color: gray;
-    font-size: 25px;
-}
-
-.star:hover,
-.star:hover ~ .star {
-    color: yellow;
-}
-
-.my-project-content {
-    margin-top: 150px; /* Adds 100 pixels of space above the movie container */
+    transform: scale(1.1);
 }
