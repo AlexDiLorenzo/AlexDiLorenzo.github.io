@@ -12,6 +12,13 @@ header {
     box-sizing: border-box;
 }
 
+.about-me {
+    font-size: 25px; /* Adjust the size as needed */
+    /* other styles */
+}
+
+
+
 .button-container {
     display: flex;
     align-items: center;
@@ -19,16 +26,48 @@ header {
     justify-content: center; 
 }
 
+html {
+    background: linear-gradient(#000000, #373737); /* Adjusted the second color to a mid-level gray */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* keep it fixed to cover the entire content */
+    background-size: cover; /* ensure it covers the entire area */
+    min-height: 100%;
+    width: 100%;
+}
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    min-height: 100%; /* ensure it covers the content */
+    width: 100%;
+    background: transparent; /* make sure body doesn't have its own background */
+}
+
+/* Ensure that .content and other containers expand with their content */
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: calc(100% - 80px); /* Account for navigation bar height */
-    margin-top: 80px; /* Push content down to avoid being covered by the fixed header */
-    padding-top: 20px; /* Additional space above the content */
+    margin-top: 80px; /* push content down to avoid being covered by the fixed header */
+    padding-top: 20px; /* additional space above the content */
+    /* Remove any fixed height if it was previously set */
 }
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
 
 .content img, .profile-image {
     max-width: 100%;
@@ -41,22 +80,16 @@ header {
     height: 100px;
 }
 
+.profile-image {
+    width: 300px;
+    height: 200px;
+}
+
 nav {
     font-size: 24px;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(#000000, #1a1a1a);
-    margin: 0;
-    color: #FFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    height: 100vh;
-}
+
 
 .chat-content {
     position: fixed;

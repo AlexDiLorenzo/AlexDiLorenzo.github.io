@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     if (whoIAmButton) {
         whoIAmButton.addEventListener('click', function() {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = '<p>Content for the "Who I am" page</p>';
+            const whoIAmContent = document.getElementById('whoIAm'); // Ensure this is the correct ID for the content container.
+            whoIAmContent.innerHTML = '<p>Content for the "Who I am" page</p>';
         });
     }
 
@@ -53,18 +53,21 @@ function sendMessage() {
 }
 
 function displayContent(sectionId) {
-    const mainContent = document.querySelector('.content');
-    const chatContent = document.querySelector('.chat-content');
+    const whoIAmContent = document.getElementById('whoIAmContent');
+    const talkWithMeContent = document.getElementById('talkWithMeContent');
 
-    mainContent.style.display = 'none';
-    chatContent.style.display = 'none';
+    // Initially hide both sections
+    whoIAmContent.style.display = 'none';
+    talkWithMeContent.style.display = 'none';
 
-    if (sectionId === 'whoIAm') {
-        mainContent.style.display = 'block';
-    } else if (sectionId === 'talkWithMe') {
-        chatContent.style.display = 'block';
+    // Show the requested section
+    if (sectionId === 'whoIAmContent') {
+        whoIAmContent.style.display = 'block';
+    } else if (sectionId === 'talkWithMeContent') {
+        talkWithMeContent.style.display = 'block';
     }
 }
+
 
 
 async function extractPDFContent(pdfUrl) {
