@@ -15,6 +15,7 @@ header {
 .about-me {
     font-size: 25px; /* Adjust the size as needed */
     /* other styles */
+    margin-top: 20px;
 }
 
 
@@ -49,6 +50,7 @@ body {
     min-height: 100%; /* ensure it covers the content */
     width: 100%;
     background: transparent; /* make sure body doesn't have its own background */
+    font-weight: italic;
 }
 
 /* Ensure that .content and other containers expand with their content */

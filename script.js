@@ -6,6 +6,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
     chatMessages = document.querySelector('.chat-messages');
 
+    const chatInput = document.getElementById('chatInput');
+    chatInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission or any other default action
+            sendMessage(); // Trigger the sendMessage function
+        }
+    });
+
+
     if (whoIAmButton) {
         whoIAmButton.addEventListener('click', function() {
             const whoIAmContent = document.getElementById('whoIAm'); // Ensure this is the correct ID for the content container.
@@ -31,6 +40,7 @@ function sendMessage() {
     const chatInput = document.getElementById('chatInput');
     const maxQuestionLength = 100;
     const maxQuestionsAllowed = 3;
+
 
     if (questionCount < maxQuestionsAllowed) {
         if (chatInput.value.trim() !== '' && chatInput.value.length <= maxQuestionLength) {
